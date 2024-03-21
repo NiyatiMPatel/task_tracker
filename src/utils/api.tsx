@@ -1,7 +1,7 @@
 import { AxiosResponse } from "axios";
 import { instance } from "./axios-interceptors";
 
-const baseUrl = process.env.VITE_REACT_APP_API_URL;
+const baseUrl = import.meta.env.VITE_REACT_APP_API_URL;
 
 // POST TODO
 export const createTodo = async (payload: Payload): Promise<ResponseData> => {

@@ -5,7 +5,7 @@ import axios, {
   AxiosError,
 } from "axios";
 
-const baseUrl = process.env.VITE_REACT_APP_API_URL;
+const baseUrl = import.meta.env.VITE_REACT_APP_API_URL;
 
 // AXIOS INSTANCE
 export const instance: AxiosInstance = axios.create({
