@@ -1,0 +1,53 @@
+{
+  "data": [
+    {
+      "_id": "65832090810686425971a40b",
+      "task": "resume",
+      "status": false,
+      "__v": 0
+    },
+    {
+      "_id": "65832098810686425971a40d",
+      "task": "coding",
+      "status": true,
+      "__v": 0
+    },
+    {
+      "_id": "6583209f810686425971a40f",
+      "task": "assignment",
+      "status": true,
+      "__v": 0
+    },
+    {
+      "_id": "658320a6810686425971a411",
+      "task": "cook",
+      "status": false,
+      "__v": 0
+    },
+    {
+      "_id": "658499053de33871bb736d21",
+      "task": "typescript",
+      "status": false,
+      "__v": 0
+    },
+    {
+      "_id": "65e7b43f8df650018b93f68f",
+      "task": "study",
+      "status": true,
+      "__v": 0
+    },
+    {
+      "_id": "65ef490f4f96a1f99d664917",
+      "task": "Adding",
+      "status": false,
+      "__v": 0
+    },
+    {
+      "_id": "660eed30c1d595d3bbd5d94b",
+      "task": "Jest",
+      "status": false,
+      "__v": 0
+    }
+  ],
+  "message": "Successfully fetched all todos"
+}
