@@ -1,4 +1,4 @@
-import "@testing-library/jest-dom";
+// import "@testing-library/jest-dom";
 import sum from "../sum";
 
 test("Sum function must calculate the sum of 2 numbers", () => {

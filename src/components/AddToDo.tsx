@@ -2,7 +2,7 @@ import { useState, ChangeEvent, FormEvent } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { createTodo } from "../utils/api";
 import ErrorBlock from "./ErrorBlock";
-import { queryClient } from "../main";
+import { queryClient } from "../App";
 
 const AddToDo = () => {
   const [inputValue, setInputValue] = useState("");

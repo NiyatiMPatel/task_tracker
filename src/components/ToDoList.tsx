@@ -1,17 +1,19 @@
 import { useSearchParams } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
 import { fetchTodos } from "../utils/api";
 import ToDoItem from "./ToDoItem";
 import ErrorBlock from "./ErrorBlock";
+import useQueryData from "../hooks/useQueryData";
 
 const ToDoList = () => {
   const [searchParams] = useSearchParams();
   let todosData = searchParams.get("todos");
 
-  const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["todos"],
-    queryFn: (): Promise<ResponseData> => fetchTodos(),
-  });
+  const { data, isLoading, isError, error } = useQueryData(
+    ["todos"],
+    (): Promise<ResponseData> => fetchTodos()
+  );
+
+  // console.log("ToDoList ~ data:", data?.data);
 
   let todos;
   let content;
@@ -28,7 +30,7 @@ const ToDoList = () => {
 
     content = (
       <ul>
-        {todos.map((todo) => (
+        {todos.map((todo: Todo) => (
           <li key={todo._id}>
             <ToDoItem _id={todo._id} task={todo.task} status={todo.status} />
           </li>

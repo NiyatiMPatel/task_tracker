@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { updateTodo, deleteTodo } from "../utils/api";
 import Modal from "./Modal";
-import { queryClient } from "../main";
+import { queryClient } from "../App";
 import ErrorBlock from "./ErrorBlock";
 
 type HandlerInputs = {

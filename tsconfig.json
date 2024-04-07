@@ -1,12 +1,11 @@
 {
   "compilerOptions": {
-    "esModuleInterop": true,
-    "module": "es2020",
-    "target": "es2020",
+    "target": "ES2020",
     "useDefineForClassFields": true,
-    "types": ["node"],
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
     "skipLibCheck": true,
+    "esModuleInterop": true,
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -22,12 +21,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-
   "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }],
-
-  "baseUrl": ".",
-  "paths": {
-    "@app/*": ["src/*"]
-  }
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
