@@ -6,15 +6,14 @@ const useQueryData = <T,>(
 ): {
   data: T | undefined;
   isLoading: boolean;
+  isSuccess: boolean;
   isError: boolean;
   error: any;
 } => {
-  const { data, isLoading, isError, error } = useQuery({
+  return useQuery({
     queryKey,
     queryFn,
   });
-
-  return { data, isLoading, isError, error };
 };
 
 export default useQueryData;

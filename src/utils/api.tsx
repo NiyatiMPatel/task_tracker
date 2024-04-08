@@ -8,7 +8,7 @@ export const createTodo = async (payload: Payload): Promise<ResponseData> => {
   console.log("createTodo ~ payload:", payload);
   try {
     const response: AxiosResponse<ResponseData> = await instance.post(
-      `${baseUrl}/todos`,
+      "/todos",
       payload
     );
     const data: ResponseData = response?.data;
@@ -22,13 +22,11 @@ export const createTodo = async (payload: Payload): Promise<ResponseData> => {
 // GET ALL TODOS
 export const fetchTodos = async (): Promise<ResponseData> => {
   try {
-    const response: AxiosResponse<ResponseData> = await instance.get(
-      `${baseUrl}/todos`
-    );
+    const response: AxiosResponse<ResponseData> = await instance.get("/todos");
     const data: ResponseData = response?.data;
     return data;
   } catch (error) {
-    console.error("Error fetching all todos:", error);
+    // console.error("Error fetching all todos:", error);
     throw new Error("Error fetching all todos");
   }
 };
@@ -51,7 +49,7 @@ export const fetchTodo = async (id: string): Promise<ResponseData> => {
 export const updateTodo = async (payload: Todo): Promise<ResponseData> => {
   try {
     const response: AxiosResponse<ResponseData> = await instance.put(
-      `${baseUrl}/todos/${payload._id}`,
+      `/todos/${payload._id}`,
       payload
     );
     const data: ResponseData = response.data;
@@ -66,7 +64,7 @@ export const updateTodo = async (payload: Todo): Promise<ResponseData> => {
 export const deleteTodo = async (id: string): Promise<ResponseData> => {
   try {
     const response: AxiosResponse<ResponseData> = await instance.delete(
-      `${baseUrl}/todos/${id}`
+      `/todos/${id}`
     );
     const data: ResponseData = response.data;
     return data;

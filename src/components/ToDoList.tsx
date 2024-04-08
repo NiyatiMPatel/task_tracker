@@ -8,7 +8,7 @@ const ToDoList = () => {
   const [searchParams] = useSearchParams();
   let todosData = searchParams.get("todos");
 
-  const { data, isLoading, isError, error } = useQueryData(
+  const { data, isLoading, isSuccess, isError, error } = useQueryData(
     ["todos"],
     (): Promise<ResponseData> => fetchTodos()
   );
@@ -17,7 +17,7 @@ const ToDoList = () => {
 
   let todos;
   let content;
-  if (Array.isArray(data?.data)) {
+  if (isSuccess && Array.isArray(data?.data)) {
     todos = data?.data;
 
     if (todosData === "active") {
@@ -31,7 +31,7 @@ const ToDoList = () => {
     content = (
       <ul>
         {todos.map((todo: Todo) => (
-          <li key={todo._id}>
+          <li key={todo._id} data-testid="to-do-item">
             <ToDoItem _id={todo._id} task={todo.task} status={todo.status} />
           </li>
         ))}
@@ -55,7 +55,7 @@ const ToDoList = () => {
 
   return (
     <>
-      <h4 className="text-base font-bold text-center mb-5">ToDoList</h4>
+      <h4 className="text-base font-bold text-center mb-5">To-Do List</h4>
       {content}
     </>
   );
